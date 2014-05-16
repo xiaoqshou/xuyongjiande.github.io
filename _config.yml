@@ -7,7 +7,7 @@ safe: false
 
 #站点基础配置
 title: Yongjian Xu
-subTitle: 徐永健    xuyongjiande@gmail.com
+subTitle: 徐永健的个人博客
 description:
 url: 
 feed: /atom.xml
@@ -26,19 +26,19 @@ nav:
     url: /contact.html
     icon: icon-envelope-alt
     class: none
-  - text: My GitHub
+  - text: 我的 GitHub
     url: https://github.com/xuyongjiande
     icon: icon-github
     class: none
 
 page:
-  - text: 文章分类
+  - text: Archives
     url: /archives.html
     last: true
-  - text: 友情链接
+  - text: Useful Links
     url: /links.html
     last: true
-  - text: 关于我
+  - text: About Me
     url: /contact.html
     last: false
 
