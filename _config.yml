@@ -7,7 +7,7 @@ safe: false
 
 #站点基础配置
 title: Yongjian Xu
-subTitle: Just another Jekyll blog.
+subTitle: 徐永健    xuyongjiande@gmail.com
 description:
 url: 
 feed: /atom.xml
@@ -26,8 +26,8 @@ nav:
     url: /contact.html
     icon: icon-envelope-alt
     class: none
-  - text: 博客模板源代码
-    url: https://github.com/pizn/iLotus
+  - text: My GitHub
+    url: https://github.com/xuyongjiande
     icon: icon-github
     class: none
 
