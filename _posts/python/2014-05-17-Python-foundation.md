@@ -9,7 +9,7 @@ I heard the words: "Late is better than never".
 
 Finally I start the learning of Python, what I should do at least one year ago.  
 
-This is my first program write with python. It is very small, but contains the basic struct.
+This is my first try of python. It is very small, but contains the basic struct.
 
 ```
 #!/usr/bin/env python
@@ -26,7 +26,7 @@ while (yourInput != '' or inputTime == 0):
 
 I got these notes in this procedure.
 
-* num++ is not allowed in Python
-* members to be print should splite with ',', which will be changed to ' ' by python.
-* there is no '&&' '||', Python uses English words "and" "not" and "or".
-* another difference with shell is variables must be defined before use.
+* num++ is not allowed in Python, which should be num += 1
+* variables need to be output should divided by ',', which will be changed to ' ' automatically
+* there is no '&&' '||' in Python, Python uses English words "and" "not" and "or" to represent logical opration
+* A difference with shell is: variables in python must be defined before use.
