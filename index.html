@@ -10,32 +10,36 @@ keywords:
         <h2>{{ site.subTitle }}</h2>
     </hgroup><!-- //violet-site -->
 </section>
-<article class="lotus-article">
-{% for rpost in paginator.posts limit:1 %}
-    <h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3>
-    <p itemprop="description">description: {{ rpost.description }}</p>
-{% endfor %}
-</article>
+	<br>
 <section class="lotus-double fn-clear">
+	<!-- left -->
     <article class="article article-first">
-		<h3>Latest <sup>(最近更新)</sup></h3>
+		<h3>Latest <sup></sup></h3>
         <ul>
             {% for npost in site.posts limit:3 offset:0   %}
 			<li><a href="{{ npost.url }}" pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a>  <l>{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}</l></li>
             {% endfor %}
         </ul>
     </article>
+
+	<!-- right -->
     <article class="article article-last">
-		<h3>Site Map <sup>(相关页面)</sup></h3>
-    <ul>
-        <li>
-            {% for page in site.page %}
+		<h3>Site Map <sup></sup></h3>
+		{% for page in site.page %}
+                <span class="lotus-squ">| - </span>
             <a href="{{ page.url }}" rel="bookmark" title="{{page.text}}">{{ page.text }}</a>
-            {% if !page.last %}
-                <span class="lotus-squ">|</span>
-            {% endif %}
-            {% endfor %}
-        </li>
-    </ul>
+		{% endfor %}
     </article>
 </section>
+
+<hr/>
+<article class="article article-first">
+{% for rpost in paginator.posts limit:10 %}
+	<h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3> 
+	<p class="lotus-meta">Publish: <time class="date" pubdate="{{ page.date | date: "%B %e, %Y" }}">{{ rpost.date | date: "%B %e, %Y" }} </time></p>
+	{{rpost.content}}
+	{% unless forloop.last %}
+	<hr/>
+	{% endunless %}
+{% endfor %}
+</article>

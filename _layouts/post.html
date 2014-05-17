@@ -14,7 +14,7 @@ layout: default
 <article  itemscope itemtype="http://schema.org/Article" class="lotus-post">
 {{ content }}
 </article>
-<p class="lotus-anno">转载请注明转自: <a href="{{ post.url }}" title="" rel="nofollow">{{ site.author.name }}</a></p>
+<p class="lotus-anno">转载请注明 转自: <a href="{{ post.url }}" title="" rel="nofollow">{{ site.author.name }}</a></p>
 <section class="lotus-nextpage fn-clear">
     {% if page.previous %}
     <div class="lotus-nextpage-left"><a class="prev" href="{{ page.previous.url }}" rel="prev">&laquo;&nbsp;{{ page.previous.title | truncatewords:5 }}</a></div>

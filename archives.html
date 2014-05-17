@@ -12,8 +12,10 @@ keywords:
 </p>
 
 <h1 class="lotus-pagetit">Archives</h1>
-<article id="archives">
 
+<section class="lotus-double fn-clear">
+<article class="article article-first" id="archives">
+	<h2>按时间分类</h2>
 {% for post in site.posts  %}
   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
   {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
@@ -44,7 +46,55 @@ keywords:
 
 {% endfor %}
 
-
-
-
 </article>
+
+<article class="article article-last" id="archives">
+	<h2>按内容分类</h2>
+	{% for class in site.classification %}
+		{% assign done = 0 %}
+
+		{% for post in site.posts  %}
+			{% if post.classification contains class.name %}
+				{% assign done=done|plus: 1 %}
+				{% if done == 1 %}
+				<ul>
+					<li><span>{{class.name}} &nbsp;</span>
+						<ul>
+				{% endif %}
+				<li>
+				<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+				({{ post.date | date: "%Y-%m-%d" }})
+				</li>
+			{% endif %}
+		{% endfor %}
+
+			{% if done >= 1 %}
+					</ul>
+				</li>
+			</ul>
+			{% endif %}
+
+	{% endfor %}
+	<!-- Show others -->
+	<ul>
+		<li><span>Others &nbsp;</span>
+			<ul>
+				{% for post in site.posts  %}
+					{% assign others = true %}
+					{% for class in site.classification %}
+						{% if post.classification contains class.name %}
+							{% assign others = flase %}
+						{% endif %}
+					{% endfor %}
+					{% if others == true %}
+					<li>
+					<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+					({{ post.date | date: "%Y-%m-%d" }})
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+</article>
+</section>

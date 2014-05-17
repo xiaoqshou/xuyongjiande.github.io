@@ -12,27 +12,33 @@ description:
 url: 
 feed: /atom.xml
 
+#文章分类
+classification:
+    - name: Git
+    - name: C
+    - name: C++
+    - name: Linux
+    - name: Shell
+    - name: Vim
+    - name: Algorithm
+
 #菜单配置
 nav:
   - text: 首页
     url: /index.html
     icon: icon-home
     class: home
-  - text: 文章归档
+  - text: Archives
     url: /archives.html
     icon: icon-reorder
     class: none
-  - text: Useful Links
+  - text: Useful links
     url: /links.html
     icon: icon-bookmark
     class: none
-  - text: 关于我
+  - text: About me
     url: /contact.html
     icon: icon-envelope-alt
-    class: none
-  - text: 我的 GitHub
-    url: https://github.com/xuyongjiande
-    icon: icon-github-sign
     class: none
 
 page:
@@ -48,3 +54,4 @@ page:
 
 author:
   name: Yongjian Xu
+  email: xuyongjiande@gmail.com
