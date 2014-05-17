@@ -11,9 +11,9 @@ layout: default
 </p>
 <h1 class="lotus-pagetit">{{ page.title }}</h1>
 <p class="lotus-meta">Publish: <time class="date" pubdate="{{ page.date  | date: "%B %e, %Y" }}">{{ page.date | date: "%B %e, %Y" }}</time></p>
-<article  itemscope itemtype="http://schema.org/Article" class="lotus-post">
+<!article  itemscope itemtype="http://schema.org/Article" class="lotus-post">
 {{ content }}
-</article>
+<!/article>
 <p class="lotus-anno">转载请注明 转自: <a href="{{ post.url }}" title="" rel="nofollow">{{ site.author.name }}</a></p>
 <section class="lotus-nextpage fn-clear">
     {% if page.previous %}
