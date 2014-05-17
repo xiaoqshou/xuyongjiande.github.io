@@ -14,13 +14,22 @@ feed: /atom.xml
 
 #文章分类
 classification:
-    - name: Git
     - name: C
     - name: C++
-    - name: Linux
+    - name: Java
     - name: Shell
+    - name: Python
+    - name: Ruby
+    - name: Perl
+    - name: JavaScript
+
+    - name: Linux
+    - name: Git
     - name: Vim
+    - name: Markdown
+
     - name: Algorithm
+    - name: Bug
 
 #菜单配置
 nav:
