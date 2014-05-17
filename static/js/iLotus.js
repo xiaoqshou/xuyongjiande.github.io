@@ -261,9 +261,9 @@ function getParamsOfShareWindow(width, height) {
 function bindShareList() {
 	var link = encodeURIComponent(document.location); // 文章链接
 	var title = encodeURIComponent(document.title.substring(0,76)); // 文章标题
-	var source = encodeURIComponent('网站名称'); // 网站名称
+	var source = encodeURIComponent('徐永健的个人博客'); // 网站名称
 	var windowName = 'share'; // 子窗口别称
-	var site = 'http://www.example.com/'; // 网站链接
+	var site = 'http://xuyongjiande.github.io/'; // 网站链接
  
 /* 
 	addListener(document.getElementById('facebook-share'), 'click', function() {
