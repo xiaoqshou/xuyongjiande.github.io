@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Build-in Structure in Python
+title: Builtin Structure in Python
 description: 
 classification: Python
 ---
