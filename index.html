@@ -7,37 +7,80 @@ keywords:
 <section class="lotus-logo fn-clear">
     <hgroup class="violet-site">
         <h1><a href="{{ site.url }}" >{{ site.title }}</a></h1>
-        <h2>{{ site.subTitle }}</h2>
+        <h2>{{ site.subTitle }}
+		</h2>
     </hgroup><!-- //violet-site -->
 </section>
-	<br>
+
+
 <section class="lotus-double fn-clear">
 	<!-- left -->
     <article class="article article-first">
-		<h3>Latest <sup></sup></h3>
+		<h3>Latest</h3>
         <ul>
-            {% for npost in site.posts limit:3 offset:0   %}
-			<li><a href="{{ npost.url }}" pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a>  <l>{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}</l></li>
+            {% for npost in site.posts limit:3 offset:0 %}
+			<li><l>{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}</l>:&emsp;<a href="{{ npost.url }}" pubdate="{{ npost.date | date_to_utc | date: '%Y-%m-%d' }}" title="{{ npost.title }}" rel="bookmark">{{ npost.title }}</a></li>
             {% endfor %}
         </ul>
+
+		<div id="share">
+			<em><font color="#339999" size="3">Share: </font></em>
+			<a rel="nofollow" id="renren-share" title="人人网"><font face="Times" color="#AAAAAA">人人网</font></a>
+			<a rel="nofollow" id="douban-share" title="豆瓣"><font face="Times" color="#AAAAAA">豆瓣</font></a>
+			<a rel="nofollow" id="sina-share" title="新浪微博"><font face="Times" color="#AAAAAA">新浪微博</font></a>
+			<a rel="nofollow" id="netease-share" title="网易微博"><font face="Times" color="#AAAAAA">网易微博</font></a>
+			<a rel="nofollow" id="tencent-share" title="腾讯微博"><font face="Times" color="#AAAAAA">腾讯微博</font></a>
+		</div>
+
     </article>
 
 	<!-- right -->
     <article class="article article-last">
-		<h3>Site Map <sup></sup></h3>
-		{% for page in site.page %}
-                <span class="lotus-squ">| - </span>
-            <a href="{{ page.url }}" rel="bookmark" title="{{page.text}}">{{ page.text }}</a>
-		{% endfor %}
+		<h3>Site Map</h3>
+        <ul>
+			{% for page in site.page %}
+			<p>
+			<a href="{{ page.url }}" rel="bookmark" title="{{page.text}}">
+				<font size='2'><i class="icon-link">{{ page.text }}</i></font>
+			</a>
+			</p>
+			{% endfor %}
+        </ul>
     </article>
 </section>
 
+<h3>Let's go...</h3>
 <hr/>
 <article class="article article-first">
 {% for rpost in paginator.posts limit:10 %}
 	<h3><a href="{{ rpost.url }}" title="{{ rpost.title }}" rel="bookmark">{{ rpost.title }}</a></h3> 
-	<p class="lotus-meta">Publish: <time class="date" pubdate="{{ page.date | date: "%B %e, %Y" }}">{{ rpost.date | date: "%B %e, %Y" }} </time></p>
-	{{rpost.content}}
+	<p class="lotus-meta">
+	Publish: <time class="date" pubdate="{{ page.date | date: "%B %e, %Y" }}">{{ rpost.date | date: "%B %e, %Y" }} </time>
+
+	{% assign wordsNum = rpost.content|number_of_words %}
+	<br><l class="lotus-meta">Number of words: {{ wordsNum }}</l>
+
+	{% if rpost.classification %}
+	<br/><l class="lotus-meta">classification: {{ rpost.classification }} </l>
+	{% endif %}
+
+	{% if rpost.description %}
+	<br/><l class="lotus-meta">Description: {{ rpost.description }} </l>
+	{% endif %}
+
+	</p>
+
+	{% if wordsNum > 100 %}
+		{% assign words = rpost.content | split: '<pre>' %}
+		{% assign newWords = words[0] | append: '<pre>' | append: words[1] | append: '<pre>' | append: words[2] | split: '<ul>' %}
+		{{ newWords[0] | append: newWords[1] |}}
+		<a href="{{ rpost.url }}" rel="bookmark" title="{{rpost.title}}">
+			<font size='3'><i class="icon-link"> View more...</i></font>
+		</a>
+	{% else %}
+		{{ rpost.content }}
+	{% endif %}
+
 	{% unless forloop.last %}
 	<hr/>
 	{% endunless %}

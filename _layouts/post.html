@@ -14,6 +14,16 @@ layout: default
 <!article  itemscope itemtype="http://schema.org/Article" class="lotus-post">
 {{ content }}
 <!/article>
+
+<div id="share">
+	<em><font color="#339999" size="3">Share: </font></em>
+	<a rel="nofollow" id="renren-share" title="人人网"><font face="Times" color="#AAAAAA">人人网</font></a>
+	<a rel="nofollow" id="douban-share" title="豆瓣"><font face="Times" color="#AAAAAA">豆瓣</font></a>
+	<a rel="nofollow" id="sina-share" title="新浪微博"><font face="Times" color="#AAAAAA">新浪微博</font></a>
+	<a rel="nofollow" id="netease-share" title="网易微博"><font face="Times" color="#AAAAAA">网易微博</font></a>
+	<a rel="nofollow" id="tencent-share" title="腾讯微博"><font face="Times" color="#AAAAAA">腾讯微博</font></a>
+</div>
+
 <p class="lotus-anno">转载请注明 转自: <a href="{{ post.url }}" title="" rel="nofollow">{{ site.author.name }}</a></p>
 <section class="lotus-nextpage fn-clear">
     {% if page.previous %}
