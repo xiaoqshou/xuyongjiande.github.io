@@ -29,7 +29,7 @@ Mike
 IndexError:list index out of range
 ```
 
-What makes Python more easier is the list can be changed in a elegant way.
+What makes Python more easier is the list can be changed in an elegant way.
 
 ```
 >>> names.append("tom")
@@ -85,7 +85,7 @@ TypeError: 'tuple' object does not support item assignment
 * keypoints:  
 	1. tuple can not change, you get more safety by using tuple than list if there is no need to change it.
 	2. if your tuple has one element, it must be defined like`tuple_example=(1,)` not `tuple_example=(1)`, the second one is the same as `tuple_example=1`, which defines an integer not a tuple, because '()' is a mathematical operator.
-	3. if one element in a tuple is an list, it must be known that the elements in this list can be changed.
+	3. if one element in a tuple is a list, it must be known that the elements in this list can be changed.
 
 ####dict
 
@@ -133,11 +133,11 @@ Define a set is not like list, tuple or dict, list uses '[,]', tuple '(,)', and 
 >>> set_example=set(listA)
 >>> set_example
 set(['A1', 'A2'])
->>> listlistB=[listA, listA]
 
 # element of set should be values or structures hashable.
 # so list(which is unhashable) can not be a element of a set.
 # actually, set is like map, but it just has the 'key' not 'key-value'
+>>> listlistB=[listA, listA]
 >>> set_example=set(listlistB) 
 Traceback (most recent call last):
 File "<stdin>", line 1, in <module>

@@ -14,7 +14,7 @@ classification: Python
   3.1415, 1.2e5, 1.2e-5 are supported
 
 * String:   
-  strings in Python looks like "abc" or 'abc'. Sometimes you need this: "I love \\"U\\"", which makes "'" is one char of your string.  
+  string in Python looks like "abc" or 'abc'. Sometimes you need this: "I love \\"U\\"", which makes "'" is one char of your string.  
   `print -r"anything"` is allowed, every char in "anything" will be reserved.  
   Another usage which looks beautiful and simple is below:  
 
@@ -36,4 +36,4 @@ classification: Python
 #### Variables
 
 Variable does not contain a defined type, not like C/C++ or Java.  
-`a=1` defines a an integer and a==1 returns True, `a='1'` changes a to a string, and then a==1 returns False.
+`a=1` defines an integer so a==1 returns True, `a='1'` changes a to a string, and then a==1 returns False.
