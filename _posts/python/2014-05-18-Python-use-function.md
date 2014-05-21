@@ -24,7 +24,7 @@ def func_notDone():
 	pass # also works in other places
 ```
 
-* More usecases
+* Return more than one value.
 
 Python can return more than one result(a tuple in fact). Use this feature like below.
 
@@ -41,6 +41,60 @@ Python can return more than one result(a tuple in fact). Use this feature like b
 >>> print c,d
 2 3
 ```
+
+* Default parameters
+
+	Usage of default parameters is like C/C++.
+
+	```
+	def func(a, b=1):
+		xxx
+	```
+
+	 But we should keep aware that the default value not being changeable, such like a list. Because this value is global and static(the meaning in C/C++), so, if our func changes the parameter, the default value changes. Here is the case:
+
+	```
+	>>> def func(a=[]):
+	...     a.append("test");
+	...     return a
+	... 
+	>>> print func()
+	['test']
+	>>> print func()
+	['test', 'test']
+	>>> print func()
+	['test', 'test', 'test']
+	```
+
+* Variable parameters
+
+	The num of parameters of a function is changeable. To archive this feature, python uses '*' to unpack a list, tuple or dict. Actually it can be seen as python automatically pack more than one parameters to a list, tuple or dict. Here is the usage:
+
+	```
+	>>> def func_orig(listE):
+	...     for ele in listE:
+	...             print ele
+	... 
+	>>> list1=[1,2,3]
+	>>> func_orig(list1)
+	1
+	2
+	3
+	>>> func_orig(1,2,3)
+	Traceback (most recent call last):
+	File "<stdin>", line 1, in <module>
+	TypeError: func_orig() takes exactly 1 argument (3 given)
+	>>> def func_new(*listE):
+	...     for ele in listE:
+	...             print ele
+	... 
+	>>> func_new(1,2,3)
+	1
+	2
+	3
+	>>> func_new(list1) # here can seen as func_orig([list1])
+	[1, 2, 3]
+	```
 
 * Builtin functions
 
