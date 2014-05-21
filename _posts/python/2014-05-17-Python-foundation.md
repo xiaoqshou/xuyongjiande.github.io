@@ -47,5 +47,6 @@ print 'For the %d time, your input is: %s.' %(inputTime, yourInput)
 
 * Unicode and UTF-8
 
-Unicode is supported by python. Use it like this `print u'你猜'`, I also found `print '你猜'` works well in python 2.7, but there is still differences between those two. `len('你猜')` returns 6, but `len(u'你猜')` returns 2.   
-Use one of them by your need.
+	Unicode is supported by python. Use it like this `print u'你猜'`, I also found `print '你猜'` works well in python 2.7, but there is still differences between those two. `len('你猜')` returns 6, but `len(u'你猜')` returns 2.
+
+	Use one of them by your need.
