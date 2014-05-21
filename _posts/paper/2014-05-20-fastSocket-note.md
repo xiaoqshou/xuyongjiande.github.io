@@ -50,7 +50,7 @@ To achieve : scalability扩展性, compatibility兼容性.
 
 共有4个重要设计，pre-core listen table, RFD(receive flow deliver), per-core established table, Fastsocket-aware VFS. 所有的设计合作起来达到的效果就是，从NIC中断到应用程序访问的处理操作全在一个core上完成。
 
-![架构](./img/2.png)
+![架构](/img/2.png)
 
 ### 3.2 Design Components
 
@@ -60,7 +60,7 @@ To achieve : scalability扩展性, compatibility兼容性.
 
 	当一个TCP SYN到达本机，kernel首先去local listen table中(xyj: 哪一个local listen table呢？确定的一个还是所有的挨个找？)找匹配的listen socket，如果找到，就通过RSS（xyj：什么是RSS）传递这个socket到一个core，否则就去global listen table中找。
 
-	![preCore Listen Table](./3.png)
+	![preCore Listen Table](/img/3.png)
 
 	【fault tolerance】 容错方面， 当进程崩溃的话，local listen socket会被关闭，进入的连接将会被引导到global Listen socket， 这样的话，别的process可以处理这些连接。由于local listen socket和global listen socket共享FD，所以kernel 将会把新的connet通知到相应的process。
 
