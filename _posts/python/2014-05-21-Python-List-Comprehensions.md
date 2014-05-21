@@ -5,15 +5,15 @@ description:
 classification: Python
 ---
 
-* The range() function
+* The `range()` function
 
-	range() is a buitin function in python. 
+	`range()` is a buitin function in python. 
 	
-	range(N) in which N>0 returns a list [0..N-1]  
-	range(0) returns []
+	`range(N)` in which N>0 returns a list [0..N-1]  
+	`range(0)` returns []
 
-	range(M,N) in which M<N returns a list [M..N-1]  
-	range(M,N) in which M>N returns []  
+	`range(M,N)` in which `M<N` returns a list [M..N-1]  
+	`range(M,N)` in which `M>N` returns []  
 
 * List Comprehensions
 
