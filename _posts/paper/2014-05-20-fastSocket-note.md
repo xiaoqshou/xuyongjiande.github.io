@@ -107,4 +107,10 @@ To achieve : scalability扩展性, compatibility兼容性.
 
 	400 行代码，主要是fastsocket-aware VFS，分配per-core listen table和established table， 和RFD。
 
-+ 
++ kernel module
+
+	1500 LOC, 可以通过指令模块的参数来开启feature， 
+
++ user-level library
+
+	可以截获并替换现有的syscall，用kernel module实现的新的接口来取代相应功能。
