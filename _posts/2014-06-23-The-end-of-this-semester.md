@@ -1,6 +1,6 @@
 ---
 layout: post
-title:
+title: 这个学期结束了
 description:
 classification:
 ---
